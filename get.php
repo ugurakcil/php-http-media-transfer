@@ -1,6 +1,6 @@
 <?php
 // Folder path where images will be saved
-$saveFolderPath = 'seturapi_medias/';
+$saveFolderPath = 'medias/';
 
 if (!is_dir($saveFolderPath)) {
     // If the folder does not exist, create it

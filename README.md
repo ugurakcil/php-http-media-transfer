@@ -5,13 +5,13 @@ Configure the variables in the Send.php file according to the folder of your fil
 
 Upload the get.php file to the server where the files will be sent.
 
-You can rename the Send.php and Get.php files or limit the entries via tunnel. My advice is to set the media limitation and firewall at a basic level in get.php.
+You can rename the send.php and get.php files or limit the entries via tunnel. My advice is to set the media limitation and firewall at a basic level in get.php.
 
 You can send files by setting a limit of 60-70 files to avoid IO problems.
 
 Make sure you're running on https on both sides.
 
-## The parameters you need to set on Send.php are:
+## The parameters you need to set on send.php are:
 
 ### Media files in this folder will be collected
 $localFolderPath = 'wp-content/uploads/blabla/';
@@ -27,3 +27,8 @@ $uploadLimit = 50;
 
 ### Allowed media extensions
 $allowedExtensions = array('jpg', 'jpeg', 'png', 'gif', 'webp', 'svg');
+
+## The parameters you need to set on get.php are:
+
+### Folder path where images will be saved
+$saveFolderPath = 'medias/';

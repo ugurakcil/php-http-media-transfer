@@ -5,10 +5,10 @@
 set_time_limit(0);
 
 // Media files in this folder will be collected
-$localFolderPath = 'wp-content/uploads/blabla/';
+$localFolderPath = 'wp-content/uploads/seturapi/';
 
 // Media files will be sent to this address
-$remoteServerUrl = 'https://blablablablablablablabla.com/get.php';
+$remoteServerUrl = 'https://api.prelive.xyz/get.php';
 
 // Create this file in the same directory as send.php and grant write permission
 $logFilePath = 'uploaded.log';
@@ -44,7 +44,7 @@ foreach ($files as $file) {
     }
 }
 
-echo '<h3 style="display:block;margin:70px 0 4px 0;padding:10px 5px;">Dosyalar İşlendi</h3>';
+echo '<h3 style="display:block;margin:70px 0 4px 0;padding:10px 5px;">Files Sent</h3>';
 
 $sentCount = 0;
 
@@ -63,7 +63,7 @@ foreach ($filesToSend as $file) {
     $response = curl_exec($ch);
 
     if ($response === false) {
-        echo '<span style="color:red;font-weight:bold;">Dosya gönderme hatası : ' . $file . ' / Error : ' . curl_error($ch) . '</span><br>';
+        echo '<p style="color:red;font-weight:bold;">File : ' . $file . ' / Error : ' . curl_error($ch) . '</p>';
         break;
     } else {
         echo '<p style="margin:0 0;padding:0 0 4px 15px;font-size:11px;">' . $file . '</p>';
@@ -78,5 +78,5 @@ foreach ($filesToSend as $file) {
     sleep(0.2);
 }
 
-echo "<p style=\"font-weight:bold;display:inline-block;position:absolute;top:0;left:0;width:100%;margin:0;padding:20px 25px;background:black;color:green;border-bottom:1px solid gray;\">Toplam yüklenen görsel sayısı: " . (count($skippedFiles) + $sentCount) . "</p>";
+echo "<p style=\"font-weight:bold;display:inline-block;position:absolute;top:0;left:0;width:100%;margin:0;padding:20px 25px;background:black;color:green;border-bottom:1px solid gray;\">Total number of uploaded images: " . (count($skippedFiles) + $sentCount) .' / '. count($files) . "</p>";
 echo '<script>setTimeout(function(){ location.reload(); }, 2000);</script>';

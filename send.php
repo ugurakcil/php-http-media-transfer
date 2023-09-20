@@ -5,10 +5,10 @@
 set_time_limit(0);
 
 // Media files in this folder will be collected
-$localFolderPath = 'wp-content/uploads/seturapi/';
+$localFolderPath = 'wp-content/uploads/blablablabla/';
 
 // Media files will be sent to this address
-$remoteServerUrl = 'https://api.prelive.xyz/get.php';
+$remoteServerUrl = 'https://blablablablabla.com/get.php';
 
 // Create this file in the same directory as send.php and grant write permission
 $logFilePath = 'uploaded.log';
@@ -78,5 +78,5 @@ foreach ($filesToSend as $file) {
     sleep(0.2);
 }
 
-echo "<p style=\"font-weight:bold;display:inline-block;position:absolute;top:0;left:0;width:100%;margin:0;padding:20px 25px;background:black;color:green;border-bottom:1px solid gray;\">Total number of uploaded images: " . (count($skippedFiles) + $sentCount) .' / '. count($files) . "</p>";
+echo "<p style=\"font-weight:bold;display:inline-block;position:absolute;top:0;left:0;width:100%;margin:0;padding:20px 25px;background:black;color:green;border-bottom:1px solid gray;\">Total number of uploaded medias: " . (count($skippedFiles) + $sentCount) .' / '. count($files) . "</p>";
 echo '<script>setTimeout(function(){ location.reload(); }, 2000);</script>';

@@ -1,4 +1,4 @@
-#HTTP media transfer system coded in PHP. 
+# HTTP media transfer system coded in PHP. 
 A simple solution to overcome the transfer and file viewing limitations in systems such as FTP or Cpanel, Plesk panel.
 
 Configure the variables in the Send.php file according to the folder of your files to be moved.
